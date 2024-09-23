@@ -3,7 +3,7 @@ import { store } from '../store';
 import Header from './Header';
 import Footer from "./Footer";
 import Card from "./Card";
-import NewCardForm from "./NewCardForm";
+
 
 
 
@@ -12,9 +12,6 @@ function App() {
       <Header />
       <div>
         <Card title='card' description="card descript" />
-      </div>
-      <div>
-        <NewCardForm />
       </div>
       <Footer />
     </Provider>;
