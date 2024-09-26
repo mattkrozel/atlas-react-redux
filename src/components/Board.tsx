@@ -5,7 +5,7 @@ import List from "./List";
 const Board: React.FC = () => {
     const lists = [
         {
-            title: 'Tp Do',
+            title: 'To Do',
             cards: [
                 { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
                 { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
@@ -13,7 +13,7 @@ const Board: React.FC = () => {
             ],
         },
         {
-            title: 'Tp Do',
+            title: 'To Do',
             cards: [
                 { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
                 { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
@@ -21,7 +21,7 @@ const Board: React.FC = () => {
             ],
         },
         {
-            title: 'Tp Do',
+            title: 'To Do',
             cards: [
                 { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
                 { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
