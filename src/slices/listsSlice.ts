@@ -22,7 +22,7 @@ const listsSlice = createSlice({
     reducers: {
         addList: (state, action: PayloadAction<string>) => {
             const newList: List = {
-                id: uuidv4,
+                id: uuidv4(),
                 title: action.payload,
                 cardIds: [],
             };
