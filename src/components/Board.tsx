@@ -1,40 +1,28 @@
 import React from "react";
-import List from "./List";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
+import Card from './Card.tsx';
+import List from "./List.tsx";
 
 
 const Board: React.FC = () => {
-    const lists = [
-        {
-            title: 'To Do',
-            cards: [
-                { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
-                { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
-                { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
-            ],
-        },
-        {
-            title: 'To Do',
-            cards: [
-                { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
-                { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
-                { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
-            ],
-        },
-        {
-            title: 'To Do',
-            cards: [
-                { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
-                { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
-                { title: 'Lorem ipsum dolor', description: 'Sed viverra, diam eu facilisis.' },
-            ],
-        },
-    ];
+    const lists = useSelector((state: RootState) => state.lists.lists);
+    const cards = useSelector((state: RootState) => state.cards.cards);
     
     return (
         <div className="m-auto h-screen w-screen overflow-x-scroll text-center">
             <div className="flex h-full space-x-4">
-                {lists.map((list, index) => (
-                    <List key={index} title={list.title} cards={list.cards} />
+                {lists.map((list) => (
+                    <div key={list.id}>
+                        <List title={list.title} listId={list.id} />
+                            <div className='cards-container'>
+                                {cards
+                                    .filter((card) => card.listId === list.id)
+                                    .map((card) => (
+                                        <Card key={card.id} id={card.id} title={card.title} description={card.description} />
+                                    ))}
+                            </div>
+                    </div>
                 ))}
             </div>
         </div>

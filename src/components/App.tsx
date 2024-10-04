@@ -8,11 +8,15 @@ import Board from "./Board";
 
 
 function App() {
-    return <Provider store={store}>
-      <Header />
-      <Board />
-      <Footer />
-    </Provider>;
+    return (
+      <Provider store={store}>
+        <div className="app">
+          <Header />
+          <Board />
+          <Footer />
+        </div>
+      </Provider>
+    );
 }
 
 export default App;

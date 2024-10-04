@@ -1,8 +1,12 @@
 import React from "react";
 
-const DeleteListButton: React.FC = () => {
+interface DeleteListButtonProps {
+  onClick: () => void;
+}
+
+const DeleteListButton: React.FC<DeleteListButtonProps> = ({ onClick }) => {
     return (
-        <button className="h-[30px]" onClick={() => alert('Delete list')}>
+        <button className="h-[30px]" onClick={onClick}>
             <svg
               className="hidden h-[30px] w-[30px] cursor-pointer group-hover/list:block"
               xmlns="http://www.w3.org/2000/svg"
